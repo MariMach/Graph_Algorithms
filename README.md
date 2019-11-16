@@ -10,12 +10,13 @@ Problems
 
 # Objective 1
 For each of the problems listed above, investigate different algorithms that solve the problem. Evaluate different properties of the algorithms that might be important for an implementation. Finally select one algorithm that you would implement to solve the problem. Explain your choice. Some aspects that you should consider might be
- time complexity
- memory consumption
- potential for parallelization
- restrictions
- application; e.g. for Ranking, on what type of graphs does the algorithm make sense, how can the result be interpreted
- feel free to find more aspects
+
+1. time complexity
+2. memory consumption
+3. potential for parallelization
+4. restrictions
+5. application; e.g. for Ranking, on what type of graphs does the algorithm make sense, how can the result be interpreted
+6. feel free to find more aspects
 
 # Objective 2
 Implement the three algorithms you chose in the first task in a system and/or language of your choice. Explain your design choices. Note that we will evaluate your solution for performance (or potential bottlenecks) and readability of the code.
