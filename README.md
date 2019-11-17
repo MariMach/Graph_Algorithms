@@ -23,6 +23,8 @@ Implement the three algorithms you chose in the first task in a system and/or la
 Some systems you might want to consider are PGX, SPARK, SNAP or GraphLab but you are free to implement your own. Note that this task requires you to actually implement the algorithm – using built-in functions that do the job is not an option.
 In case you chose to implement your own system: Of course you do not have to write an entire graph analytics system. The algorithms including the data-structures you want to use are sufficient – but explain your design choices.
 
+# Graphs 
+
 # Types of Graphs
 
 # Undirected Graph
@@ -34,6 +36,13 @@ In case you chose to implement your own system: Of course you do not have to wri
   A directed graph or digraph is a graph in which edges have orientations.
   For example, The edge (u ,v) is the edge from node u to node v.
   Example : People in Twitter following each other, A person u bought a gift for v. 
+  Many real world situations can be modelled as a graph with directed edges where some events must occur before others.
+   . School class prerequisites
+   . Program dependencies
+   . Event scheduling
+   . Assembly instructions
+   . Etc ..
+
 
 # Weighted Graphs 
   Many Graphs can have edges that contain a certain weight to represent an arbitrary value such as cost, distance, quantity, etc ...
