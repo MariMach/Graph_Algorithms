@@ -207,8 +207,11 @@ Is an escape possible? If yes, how long will it take?
        . . R R . . .
        R . R E . R .
 
-
-
+# Topological Sort :
+  A topological ordering is an ordering of the nodes in a directed graph where for each directed edge from node A to node B, node A appears before node B in the ordering and it is not unique.
+  A graph with a cycle cannot have a valid ordering.
+  The only type of graph which has a valid topological ordering is a Directed Acyclic Graph (DAG : graphs with directed edges and no cycles, to verify that my graph does not conatain a directed cycle we can use Tarjan's strongly connected component algorithm which can used to find these cycles). 
+  The topological sort algorithm can find a topological ordering in O(V+E) time.
 
 
 
