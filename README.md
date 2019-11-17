@@ -181,6 +181,18 @@ What else DFS can do ??
 The breath-first search is another fundamental search algorithm used to explore the nodes and edges of a graph. It runs with the time complexity of O(V+E) and is often used as a building block in other algorithms. The BFS algorithm is particularly useful for one thing: finding the shortest path on unweighted graphs.
 A BFS starts at some arbitrary node of a graph and explores the neighbor nodes first, before moving to the next level neighbors. BFS uses a queue data structure to track which node to visit next.
 
+# Dungeon Problem Statement
+You are trapped in a 2D dungeon and need to find the quickest way out!
+The dungeon is composed of unit cubes that may or may not be filled with rock.
+It takes one minute to move one unit north, south, east, west.
+You cannot move diagonally and the maze is surrounded by solid rock on all sides.
+Is an escape possible? If yes, how long will it take?
+S . . # . . .
+. # . . . # .
+. # . . . . .
+. . # # . . .
+# . # E . # .
+
 
 
 
