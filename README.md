@@ -24,18 +24,21 @@ Some systems you might want to consider are PGX, SPARK, SNAP or GraphLab but you
 In case you chose to implement your own system: Of course you do not have to write an entire graph analytics system. The algorithms including the data-structures you want to use are sufficient – but explain your design choices.
 
 # Graphs 
-
+   Consist of nodes(Vertices) and edges.
+   E: Total edges in a graph
+   V: Total vertices in a graph
 # Types of Graphs
 
 # Undirected Graph
   An undirected graph is a graph in which edges have no orientation.
   The edge (u, v) is identical to the edge (v, u).
+   Example : People in Facebook or Linkdin  following each other, A person u bought a gift for v. 
   Example : The nodes could represent cities and an edge could represent a bidirectional road.
   
 # Directed Graph (Digraph)
   A directed graph or digraph is a graph in which edges have orientations.
   For example, The edge (u ,v) is the edge from node u to node v.
-  Example : People in Twitter following each other, A person u bought a gift for v. 
+  Example : People in Twitter or Instagram following each other, A person u bought a gift for v. 
   Many real world situations can be modelled as a graph with directed edges where some events must occur before others.
    . School class prerequisites
    . Program dependencies
@@ -88,34 +91,48 @@ In case you chose to implement your own system: Of course you do not have to wri
 # Representing Graphs
   
   # 1. Adjacency Matrix
-    Adjacency matrix m is a very simple way to represent a graph.
-    The idea is that the cell m[i][j] represents the edge weight of going from node i to node j.
-    Node that it is often assumed that the edge of going from a node to itself has a cost of zero.
-    Cons : 1. Requires O(V^2) space.
-           2. Iterating over all edges takes O(v^2) time
-    Pros : 1. Space efficient for representing dense graphs.
-           2. Edge weight lookup is O(1). ( m[i][j])
-           3. Simplest graph representation.
+   Adjacency matrix m is a very simple way to represent a graph.
+   The idea is that the cell m[i][j] represents the edge weight of going from node i to node j.
+   Node that it is often assumed that the edge of going from a node to itself has a cost of zero.
+   Space O(V^2)
+   Add Node: O(V^2)
+   Remove Node: O(V^2)
+   Add Edge: O(1)
+   Remove Edge : O(1)
+   Query Edge: O(1)
+   Find Neighbors: O(V)
+   Cons : 1. Requires O(V^2) space.
+          2. Iterating over all edges takes O(v^2) time
+   Pros : 1. Space efficient for representing dense graphs (in a graph where every node is connected to all the other nodes except itself E=V*(V-1)).
+          2. Edge weight lookup is O(1). (m[i][j])
+          3. Simplest graph representation.
   # 2. Adjacency List
-    An adjacency list is a way to represent a graph as a map from nodes to lists of edges.
-    Example : Node A -> [(Node : B, cost : 4), (Node : C, cost : 1)]
-              Node B -> [(Node : C, cost : 6)]
-              Node C -> [(Node : A, cost : 5), (Node : B, cost : 1)]
-    Cons : 1. Less space efficient for denser graphs.
-           2. Edge weight lookup is O(E)
-           3. Slightly more complex graph representation.
-    Pros : 1. Space efficient for representing sparse graphs.
-           2. Iterating over all edges is efficient
+   An adjacency list is a way to represent a graph as a map from nodes to lists of edges.
+   Example : Node A -> [(Node : B, cost : 4), (Node : C, cost : 1)]
+             Node B -> [(Node : C, cost : 6)]
+             Node C -> [(Node : A, cost : 5), (Node : B, cost : 1)]
+   Space O(V) (O(V^2) in a dense graph WCS)
+   Add Node: O(1)
+   Remove Node: O(V^2) (Removing the node's linked list and make sure or all other nodes does not have that node, O(V^2) in a dense graph WCS)
+   Add Edge: O(K)  (WCS is O(V)) where K : is the length of the linked list (lookup and then add add the edge if it does not already exists lookup in alinked list O(n) +  insert in the end O(1))
+   Remove Edge : O(K)  (WCS is O(V)) where K : is the length of the linked list (lookup and then add add the edge if it does not already exists lookup in a linked list O(n) and then remove it)
+   Query Edge:  O(K)  (WCS is O(V)) where K : is the length of the linked list (lookup and then add add the edge if it does not already exists lookup in alinked list O(n))
+   Find Neighbors: O(V)
+   Cons : 1. Less space efficient for denser graphs (in a graph where every node is connected to all the other nodes except itself E=V*(V-1)  O(V+E) ~ O(V^2)).
+          2. Edge weight lookup is O(E)
+          3. Slightly more complex graph representation.
+   Pros : 1. Space efficient for representing sparse graphs.
+          2. Iterating over all edges is efficient
                    
   # 3. Edge List
-    An edge list is a way to represent a graph simply as an unordered list of edges. Assume the notation fpr any triplet (u, v, w) means: the cost from node u to node v is w.
-    It is seldomly used because of its lack of structure. However, it is conceptually simple and practical in a hanful algorithms.
-    Example :[(C,A,4), (A,C,1), (B,C,6), (A,B,4), (C,B,1)]
-    Cons : 1. Less space efficient for denser graphs.
-           2. Edge weight lookup is O(E)
-    Pros : 1. Space efficient for representing sparse graphs.
-           2. Iterating over all edges is efficient
-           3. Very simple structure
+   An edge list is a way to represent a graph simply as an unordered list of edges. Assume the notation for any triplet (u, v, w) means: the cost from node u to node v is w.
+   It is seldomly used because of its lack of structure. However, it is conceptually simple and practical in a hanful algorithms.
+   Example :[(C,A,4), (A,C,1), (B,C,6), (A,B,4), (C,B,1)]
+   Cons : 1. Less space efficient for denser graphs.
+          2. Edge weight lookup is O(E)
+   Pros : 1. Space efficient for representing sparse graphs.
+          2. Iterating over all edges is efficient
+          3. Very simple structure
            
 # Common Graph Theory Problems
 Is the graph directed or undirected?
