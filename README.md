@@ -188,19 +188,19 @@ It takes one minute to move one unit north, south, east, west.
 You cannot move diagonally and the maze is surrounded by solid rock on all sides.
 Is an escape possible? If yes, how long will it take?
 
-S : Start 
-E : End 
-R : Rock
+       S : Start 
+       E : End 
+       R : Rock
 
-S . . R . . .
+       S . . R . . .
 
-. R . . . R .
+       . R . . . R .
 
-. R . . . . .
+       . R . . . . .
 
-. . R R . . .
+       . . R R . . .
 
-R . R E . R .
+       R . R E . R .
 
 
 
