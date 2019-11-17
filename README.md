@@ -143,9 +143,13 @@ Should I use an adjacency matrix, adjacency list, an edge list or other structur
      Strongly Connected Components (SCCs) can be thought of a self-contained cycles within a directed graph where every vertex in a given cycle can reach every other vertex in the same cycle.
      Algorithms: Tarjan's and Kosaraju's algorithm
      
-  # 5. Traveling Salesman Problem:
+  # 5. Traveling Salesman Problem YSP:
      "Given a list of cities and the distances between each pair of cities what is the shortest possible route that visits each city exactly once and returns to the origin city?". It is an NP-Hard problem.
      Algorithms: Held-Karp, Branch and Bound, ..
+     Very Hard
+     NP-Complete
+     Brute-Force SOlution O(n!)
+     Dynamic Programming O(n^2 * 2^n)
      
    # 6. Bridges:
      A bridge is any edge in a graph whose removal increases the number of connected components.
@@ -173,6 +177,8 @@ Should I use an adjacency matrix, adjacency list, an edge list or other structur
 # Depth First Search (DFS):
 The depth-first search is the most fundamental search algorithm used to explore the nodes and edges of a graph. It runs with the time complexity of O(V+E) and is often used as a building block in other algorithms. By itself, the DFS isn't all that useful, but when augmented to perform other tasks such as count connected components, determine connectivity, or find bridges/articulation points then DFS shines.
 DFS plunges depth-first into a graph without regard for which edge it takes next until it cannot go any further at which point it backtracks and continues.
+
+
 # Connected Components:
 Assign an integer value to each group to be able to distinguish them instead of coloring them.
 use dfs and mark all reachable nodes as being part of the same component.
