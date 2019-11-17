@@ -193,13 +193,9 @@ Is an escape possible? If yes, how long will it take?
        R : Rock
 
        S . . R . . .
-
        . R . . . R .
-
        . R . . . . .
-
        . . R R . . .
-
        R . R E . R .
 
 
