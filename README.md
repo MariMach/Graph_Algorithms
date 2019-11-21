@@ -78,6 +78,7 @@ In case you chose to implement your own system: Of course you do not have to wri
   These graphs play an importamt role in representing structures with dependencies.
   Several efficient algorithms exist to operates on DAGs.
   - All out-trees are DAGs but not all DAGs are out-trees.
+  In a DAG, no two vertices v and w can be in the same strong component if there were, there would be both a directed path from v to w and one from w to v, which implies that the digraph has a directed cycle. Thus, each vertex is its own strong component  V SCCs.
   
 # 6. Bipartite Graph
   A bipartite graph is one whose vertices can be split into two independent groups U, V such that every edge connects between U and V.
@@ -92,7 +93,6 @@ In case you chose to implement your own system: Of course you do not have to wri
   
   # 1. Adjacency Matrix
    Adjacency matrix m is a very simple way to represent a graph.
-   The idea is that the cell m[i][j] represents the edge weight of going from node i to node j.
    Node that it is often assumed that the edge of going from a node to itself has a cost of zero.
    Space O(V^2)
    Add Node: O(V^2)
@@ -156,9 +156,11 @@ Should I use an adjacency matrix, adjacency list, an edge list or other structur
      A negative cycle is a cycle with a negative weight.
      Algorithms : Bellman-Ford and Floyd-Warshall
      
-  # 4. Strongly Connected Components:
-     Strongly Connected Components (SCCs) can be thought of a self-contained cycles within a directed graph where every vertex in a given cycle can reach every other vertex in the same cycle.
-     Algorithms: Tarjan's and Kosaraju's algorithm
+  # 4. Strongly Connected Components Digraph:
+   Two vertices v and w in a digraph, are strongly connected if there's a directed path from v to w and another directed path from w to v. And the thing about strongly connected is, that it's an equivalence relation.
+  A strong connected component is a maximal subset of strongly connected vertices.
+  In other words Strongly Connected Components (SCCs) can be thought of a self-contained cycles within a directed graph where every vertex in a given cycle can reach every other vertex in the same cycle.
+  Algorithms: Tarjan's and Kosaraju's algorithm
      
   # 5. Traveling Salesman Problem YSP:
      "Given a list of cities and the distances between each pair of cities what is the shortest possible route that visits each city exactly once and returns to the origin city?". It is an NP-Hard problem.
